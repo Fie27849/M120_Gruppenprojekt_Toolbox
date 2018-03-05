@@ -1,6 +1,6 @@
 # M426_Gruppenprojekt_Toolbox
 
-How to Clone Repositroy in Eclipse
+How to clone Repositroy in Eclipse
 
 File -> Import
 
@@ -16,7 +16,7 @@ Nacher Next drücken
 
 Kann man einfach Next dürcken
 
-##Local Destionation
+##Local Destination 
 
 Speicherort auswählen
 
