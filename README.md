@@ -6,7 +6,7 @@ File -> Import
 
 Git -> Projects from Git
 
-##Soruce Git Repository
+##Source Git Repository
 
 Link einfügen bei URI: https://github.com/Fie27849/M120_Gruppenprojekt_Toolbox.git
 
