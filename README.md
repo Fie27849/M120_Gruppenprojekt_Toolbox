@@ -1,5 +1,7 @@
 # M426_Gruppenprojekt_Toolbox
 
+EGit Link: http://download.eclipse.org/egit/updates
+
 How to clone Repositroy in Eclipse
 
 File -> Import
