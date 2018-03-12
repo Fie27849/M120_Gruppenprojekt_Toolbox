@@ -1,7 +1,8 @@
+import java.util.concurrent.TimeUnit;
 
 public class Hangman 
 {
-	public Hangman()
+	public Hangman() throws InterruptedException
 	{
 		System.out.println("                                                      \n" + 
 				" _   _     _     _   _   ____  __  __     _     _   _ \n" + 
@@ -11,6 +12,7 @@ public class Hangman
 				"|_| |_|/_/   \\_\\|_| \\_| \\____||_|  |_|/_/   \\_\\|_| \\_|\n" + 
 				"                                                      \n" + 
 				"");
+		TimeUnit.SECONDS.sleep(1);
 		System.out.println("  +---+\r\n" + 
 				"  |   |\r\n" + 
 				"      |\r\n" + 
@@ -18,20 +20,23 @@ public class Hangman
 				"      |\r\n" + 
 				"      |\r\n" + 
 				"=========");
-		System.out.println("  +---+\r\n" + 
-				"  |   |\r\n" + 
-				"  O   |\r\n" + 
-				"      |\r\n" + 
-				"      |\r\n" + 
-				"      |\r\n" + 
-				"=========");
+		TimeUnit.SECONDS.sleep(1);
 		System.out.println("  +---+\r\n" + 
 				"  |   |\r\n" + 
 				"  O   |\r\n" + 
+				"      |\r\n" + 
+				"      |\r\n" + 
+				"      |\r\n" + 
+				"=========");
+		TimeUnit.SECONDS.sleep(1);
+		System.out.println("  +---+\r\n" + 
+				"  |   |\r\n" + 
+				"  O   |\r\n" + 
 				"  |   |\r\n" + 
 				"      |\r\n" + 
 				"      |\r\n" + 
 				"=========");
+		TimeUnit.SECONDS.sleep(1);
 		System.out.println("  +---+\r\n" + 
 				"  |   |\r\n" + 
 				"  O   |\r\n" + 
@@ -39,6 +44,7 @@ public class Hangman
 				"      |\r\n" + 
 				"      |\r\n" + 
 				"=========");
+		TimeUnit.SECONDS.sleep(1);
 		System.out.println("  +---+\r\n" + 
 				"  |   |\r\n" + 
 				"  O   |\r\n" + 
@@ -46,6 +52,7 @@ public class Hangman
 				"      |\r\n" + 
 				"      |\r\n" + 
 				"=========");
+		TimeUnit.SECONDS.sleep(1);
 		System.out.println("  +---+\r\n" + 
 				"  |   |\r\n" + 
 				"  O   |\r\n" + 
@@ -53,6 +60,7 @@ public class Hangman
 				" /    |\r\n" + 
 				"      |\r\n" + 
 				"=========");
+		TimeUnit.SECONDS.sleep(1);
 		System.out.println("  +---+\r\n" + 
 				"  |   |\r\n" + 
 				"  O   |\r\n" + 
@@ -60,6 +68,7 @@ public class Hangman
 				" / \\  |\r\n" + 
 				"      |\r\n" + 
 				"=========");
+		TimeUnit.SECONDS.sleep(1);
 		
 		System.out.println("                                                                                                                                                                                                        \n" + 
 				"                                                                                                                                                                                                        \n" + 
