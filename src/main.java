@@ -1,8 +1,9 @@
 
+
 public class main 
 {	
-	public static void main(String[] args) throws InterruptedException 
-	{
-		Hangman hang = new Hangman();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("OK COOL");
 	}
 }
