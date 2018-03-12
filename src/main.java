@@ -7,12 +7,12 @@ public class main
 		
 		
 		// Janosch
-		System.out.println("======================== JANOSCH ========================");
-		try {
-			Hangman hang = new Hangman();
-		} catch (Exception e) {
-			
-		}
+//		System.out.println("======================== JANOSCH ========================");
+//		try {
+//			Hangman hang = new Hangman();
+//		} catch (Exception e) {
+//			
+//		}
 		
 		// Stephanie
 		System.out.println("======================== STEPHANIE ========================");

@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class BenzinRechner {
 	
@@ -12,11 +13,30 @@ public class BenzinRechner {
 	
 	private double verbrauchPro100;	// Menge Benzin, für 100km in Liter
 	private String Rechner;
+	
+	Scanner scanner = new Scanner(System.in);	// scanner für Eingaben
+	private int eingabe;			// int für eingabens
 
 	
 	// Konstruktorer
 	public BenzinRechner(){
-		System.out.println("Hallo BenzinRechner!");
+		System.out.println("Hallo ich bin der BenzinRechner!");
+		
+//		System.out.println("Zuerst brauchen wir ein paas angaben: Tankvolumen, ");
+//		System.out.println("Wie gross ist dein Tank in Litern?");
+//		tankGesamt = scanner.nextDouble();
+		
+		System.out.println("Was möchtest du berechnen?");
+		System.out.println("Es gibt folgende Möglichkeiten:");
+		System.out.println("1 maximale km mit vollem Tank berechnen");
+		System.out.println("2 aktuellen Füllstand berechnen");
+		System.out.println("3 restliche km mit aktuellem Füllstand berechnen");
+		System.out.println("4 nötige Liter benzin für bestimmte Strecke berechnen");
+		System.out.println("5 berechnen, wieviel Benzin man für die geplante strecke noch tanken muss");
+		
+		System.out.println("Bitte gib die entsprechende Zahl ein:");
+		eingabe = scanner.nextInt();
+		eingabeAuswerten(eingabe);
 	}
 
 	
@@ -69,5 +89,35 @@ public class BenzinRechner {
 	
 	
 	// weitere Methoden
+	private void eingabeAuswerten(int eingabe){
+		
+		switch (eingabe) {
+		case 1:
+			System.out.println("Case " + 1);
+			break;
+		case 2:
+			System.out.println("Case " + 2);
+			break;
+		case 3:
+			System.out.println("Case " + 3);
+			break;
+		case 4:
+			System.out.println("Case " + 4);
+			break;
+		case 5:
+			System.out.println("Case " + 5);
+			break;
+
+
+		default:
+			System.out.println("Die Eingabe ist leider ungültig.\nBitte versuchen Sie es mit einer Zahl von 1 bis 5 erneut.");
+			
+			break;
+		}
+		
+	}
+	
+	
+	
 
 }
