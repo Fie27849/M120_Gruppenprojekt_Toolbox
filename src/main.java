@@ -6,12 +6,16 @@ public class main
 		
 		
 		
+		// Janosch
+		System.out.println("======================== JANOSCH ========================");
 		try {
 			Hangman hang = new Hangman();
 		} catch (Exception e) {
 			
 		}
 		
-		System.out.println("OK COOL");
+		// Stephanie
+		System.out.println("======================== STEPHANIE ========================");
+		BenzinRechner benzinRechner = new BenzinRechner();
 	}
 }
