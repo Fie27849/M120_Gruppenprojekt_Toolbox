@@ -7,13 +7,7 @@ public class main
 		
 		
 		// Denis
-//		System.out.println("======================== DENIS ========================");
-//		try {
-//			Hangman hang = new Hangman();
-//		} catch (Exception e) {
-//			
-//		}
-
+		System.out.println("======================== DENIS ========================");
 		Hangman hangman = new Hangman("Test");
 		hangman.guess('T');
 		hangman.guess('a');
@@ -27,8 +21,8 @@ public class main
 		
 		Hangman hangman2 = new Hangman("Hello");
 		//hangman2.start();
-
 		TextAnalyse text = new TextAnalyse();
+		
 		// Stephanie
 		//System.out.println("======================== STEPHANIE ========================");
 		//BenzinRechner benzinRechner = new BenzinRechner();
