@@ -168,14 +168,7 @@ public class Hangman
 					"  G:::::GGGGGGGG::::G   A:::::A             A:::::A   M::::::M               M::::::MEE::::::EEEEEEEE:::::E     O:::::::OOO:::::::O         V:::::::V         EE::::::EEEEEEEE:::::ERR:::::R     R:::::R\n" + 
 					"   GG:::::::::::::::G  A:::::A               A:::::A  M::::::M               M::::::ME::::::::::::::::::::E      OO:::::::::::::OO           V:::::V          E::::::::::::::::::::ER::::::R     R:::::R\n" + 
 					"     GGG::::::GGG:::G A:::::A                 A:::::A M::::::M               M::::::ME::::::::::::::::::::E        OO:::::::::OO              V:::V           E::::::::::::::::::::ER::::::R     R:::::R\n" + 
-					"        GGGGGG   GGGGAAAAAAA                   AAAAAAAMMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE          OOOOOOOOO                 VVV            EEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR\n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
+					"        GGGGGG   GGGGAAAAAAA                   AAAAAAAMMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE          OOOOOOOOO                 VVV            EEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR\n" + 					
 					"");
 			System.out.println("  +---+\r\n" + 
 					"  |   |\r\n" + 

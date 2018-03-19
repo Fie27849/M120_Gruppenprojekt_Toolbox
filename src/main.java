@@ -26,8 +26,9 @@ public class main
 		hangman.guess('o');
 		
 		Hangman hangman2 = new Hangman("Hello");
-		hangman2.start();
+		//hangman2.start();
 
+		TextAnalyse text = new TextAnalyse();
 		// Stephanie
 		//System.out.println("======================== STEPHANIE ========================");
 		//BenzinRechner benzinRechner = new BenzinRechner();
