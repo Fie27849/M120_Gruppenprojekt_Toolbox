@@ -1,13 +1,11 @@
-
-
 public class main 
 {	
 	public static void main(String[] args) {
 		
 		
 		
-		// Janosch
-//		System.out.println("======================== JANOSCH ========================");
+		// Denis
+//		System.out.println("======================== DENIS ========================");
 //		try {
 //			Hangman hang = new Hangman();
 //		} catch (Exception e) {
@@ -25,5 +23,10 @@ public class main
 			Quersumme.eingabe();
 			} catch (Exception e) {			
 		}
+
+		// Janosch
+		System.out.println("======================== JANOSCH ========================");
+		Primzahlen primzahlen = new Primzahlen(100);
+		
 	}
 }
