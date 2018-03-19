@@ -50,7 +50,7 @@ public class main
 
 		// Janosch
 		System.out.println("======================== JANOSCH ========================");
-		Primzahlen primzahlen = new Primzahlen(100);
+//		Primzahlen primzahlen = new Primzahlen(100);
 		
 
 	}
