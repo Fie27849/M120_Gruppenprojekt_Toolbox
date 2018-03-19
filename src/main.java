@@ -6,20 +6,14 @@ public class main
 		
 		
 		
-		// Janosch
-//		System.out.println("======================== JANOSCH ========================");
+		// Denis
+//		System.out.println("======================== DENIS ========================");
 //		try {
 //			Hangman hang = new Hangman();
 //		} catch (Exception e) {
 //			
 //		}
-		
-		// Stephanie
-		//System.out.println("======================== STEPHANIE ========================");
-		//BenzinRechner benzinRechner = new BenzinRechner();
-		
-		
-		// Denis
+
 		Hangman hangman = new Hangman("Test");
 		hangman.guess('T');
 		hangman.guess('a');
@@ -31,11 +25,30 @@ public class main
 		hangman.guess('l');
 		hangman.guess('o');
 		
-		Hangman hangman2 = new Hangman("Hello");
-		Scanner scan = new Scanner(System.in);
-		boolean check = true;
-		do {
-			check = hangman2.guess(scan.next().charAt(0));
-		} while (check);
+//		Hangman hangman2 = new Hangman("Hello");
+//		Scanner scan = new Scanner(System.in);
+//		boolean check = true;
+//		do {
+//			check = hangman2.guess(scan.next().charAt(0));
+//		} while (check);
+
+		// Stephanie
+		//System.out.println("======================== STEPHANIE ========================");
+		//BenzinRechner benzinRechner = new BenzinRechner();
+		
+		
+		// Sandro
+		System.out.println("======================== Sandro ========================");
+		try {
+			Quersumme Quersumme = new Quersumme();
+			Quersumme.eingabe();
+			} catch (Exception e) {			
+		}
+
+		// Janosch
+		System.out.println("======================== JANOSCH ========================");
+		Primzahlen primzahlen = new Primzahlen(100);
+		
+
 	}
 }
