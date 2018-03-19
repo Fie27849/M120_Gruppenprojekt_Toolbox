@@ -110,8 +110,10 @@ public class BenzinRechner {
 
 
 		default:
-			System.out.println("Die Eingabe ist leider ungültig.\nBitte versuchen Sie es mit einer Zahl von 1 bis 5 erneut.");
-			
+			System.out.println("==============================\nDie Eingabe ist"
+					+ " leider ungültig.\nBitte versuchen Sie es mit einer Zahl"
+					+ " von 1 bis 5 erneut.\n==============================");
+			BenzinRechner benzinRechner = new BenzinRechner();
 			break;
 		}
 		
