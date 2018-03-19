@@ -25,12 +25,8 @@ public class main
 		hangman.guess('l');
 		hangman.guess('o');
 		
-//		Hangman hangman2 = new Hangman("Hello");
-//		Scanner scan = new Scanner(System.in);
-//		boolean check = true;
-//		do {
-//			check = hangman2.guess(scan.next().charAt(0));
-//		} while (check);
+		Hangman hangman2 = new Hangman("Hello");
+		hangman2.start();
 
 		// Stephanie
 		//System.out.println("======================== STEPHANIE ========================");
