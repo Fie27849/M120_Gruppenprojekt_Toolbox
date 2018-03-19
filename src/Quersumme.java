@@ -8,7 +8,12 @@ public class Quersumme {
 	Scanner scan = new Scanner(System.in);
 
 	public Quersumme() {
-		
+		eingabe();
+	}
+	
+	public Quersumme(int zahl) {
+		this.zahl = zahl;
+		berechnen(zahl);
 	}
 	
 	public void eingabe(){

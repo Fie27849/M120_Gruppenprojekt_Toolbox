@@ -19,8 +19,11 @@ public class main
 		// Sandro
 		System.out.println("======================== Sandro ========================");
 		try {
-			Quersumme Quersumme = new Quersumme();
-			Quersumme.eingabe();
+			Quersumme Quersumme = new Quersumme(123);
+			Quersumme Quersumme2 = new Quersumme(6);
+			Quersumme Quersumme3 = new Quersumme(0);
+			Quersumme Quersumme4 = new Quersumme();
+
 			} catch (Exception e) {			
 		}
 
