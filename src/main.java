@@ -15,7 +15,15 @@ public class main
 //		}
 		
 		// Stephanie
-		System.out.println("======================== STEPHANIE ========================");
-		BenzinRechner benzinRechner = new BenzinRechner();
+//		System.out.println("======================== STEPHANIE ========================");
+//		BenzinRechner benzinRechner = new BenzinRechner();
+		
+		// Sandro
+		System.out.println("======================== Sandro ========================");
+		try {
+			Quersumme Quersumme = new Quersumme();
+			Quersumme.eingabe();
+			} catch (Exception e) {			
+		}
 	}
 }
