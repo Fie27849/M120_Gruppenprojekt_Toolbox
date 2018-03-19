@@ -14,16 +14,16 @@ public class main
 //			
 //		}
 
-		Hangman hangman = new Hangman("Test");
-		hangman.guess('T');
-		hangman.guess('a');
-		hangman.guess('b');
-		hangman.guess('z');
-		hangman.guess('u');
-		hangman.guess('i');
-		hangman.guess('k');
-		hangman.guess('l');
-		hangman.guess('o');
+//		Hangman hangman = new Hangman("Test");
+//		hangman.guess('T');
+//		hangman.guess('a');
+//		hangman.guess('b');
+//		hangman.guess('z');
+//		hangman.guess('u');
+//		hangman.guess('i');
+//		hangman.guess('k');
+//		hangman.guess('l');
+//		hangman.guess('o');
 		
 //		Hangman hangman2 = new Hangman("Hello");
 //		Scanner scan = new Scanner(System.in);
@@ -39,17 +39,23 @@ public class main
 		
 		// Sandro
 		System.out.println("======================== Sandro ========================");
-		try {
-			Quersumme Quersumme = new Quersumme(123);
-			Quersumme Quersumme2 = new Quersumme(6);
-			Quersumme Quersumme3 = new Quersumme(0);
-			Quersumme Quersumme4 = new Quersumme();
+//		try {
+//			Quersumme Quersumme = new Quersumme(123);
+//			Quersumme Quersumme2 = new Quersumme(6);
+//			Quersumme Quersumme3 = new Quersumme(0);
+//			Quersumme Quersumme4 = new Quersumme();
 
+//			} catch (Exception e) {			
+//		}
+		try{
+			TextVerschluesseln verschl = new TextVerschluesseln();
 			} catch (Exception e) {			
 		}
+		
+		
 
 		// Janosch
-		System.out.println("======================== JANOSCH ========================");
+//		System.out.println("======================== JANOSCH ========================");
 //		Primzahlen primzahlen = new Primzahlen(100);
 		
 
