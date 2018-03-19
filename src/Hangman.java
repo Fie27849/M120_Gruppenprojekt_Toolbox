@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Hangman 
 {
@@ -7,14 +8,14 @@ public class Hangman
 	private ArrayList<String> guessedletters;
 	private int failedguesses;
 	private final int MAXFAILEDGUESS = 7;
-	private boolean playing = false;
+	private Scanner scan;
 	
 	public Hangman(String word) {
 		this.word = word.toLowerCase();
 		this.guessedletters = new ArrayList<>();
 		this.failedguesses = 0;
 		this.foundletters = new String[word.length()];
-		this.playing = true;
+		this.scan = new Scanner(System.in);
 		System.out.println("                                                      \n" + 
 				" _   _     _     _   _   ____  __  __     _     _   _ \n" + 
 				"| | | |   / \\   | \\ | | / ___||  \\/  |   / \\   | \\ | |\n" + 
@@ -23,6 +24,15 @@ public class Hangman
 				"|_| |_|/_/   \\_\\|_| \\_| \\____||_|  |_|/_/   \\_\\|_| \\_|\n" + 
 				"                                                      \n" + 
 				"");
+		System.out.println("Write letters to guess the word");
+	}
+	public void start() {
+		
+		boolean check = true;
+		do {
+			check = this.guess(scan.next().charAt(0));
+		} while (check);
+
 	}
 	
 	public boolean guess(char letterfromguess){
@@ -158,14 +168,7 @@ public class Hangman
 					"  G:::::GGGGGGGG::::G   A:::::A             A:::::A   M::::::M               M::::::MEE::::::EEEEEEEE:::::E     O:::::::OOO:::::::O         V:::::::V         EE::::::EEEEEEEE:::::ERR:::::R     R:::::R\n" + 
 					"   GG:::::::::::::::G  A:::::A               A:::::A  M::::::M               M::::::ME::::::::::::::::::::E      OO:::::::::::::OO           V:::::V          E::::::::::::::::::::ER::::::R     R:::::R\n" + 
 					"     GGG::::::GGG:::G A:::::A                 A:::::A M::::::M               M::::::ME::::::::::::::::::::E        OO:::::::::OO              V:::V           E::::::::::::::::::::ER::::::R     R:::::R\n" + 
-					"        GGGGGG   GGGGAAAAAAA                   AAAAAAAMMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE          OOOOOOOOO                 VVV            EEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR\n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
-					"                                                                                                                                                                                                        \n" + 
+					"        GGGGGG   GGGGAAAAAAA                   AAAAAAAMMMMMMMM               MMMMMMMMEEEEEEEEEEEEEEEEEEEEEE          OOOOOOOOO                 VVV            EEEEEEEEEEEEEEEEEEEEEERRRRRRRR     RRRRRRR\n" + 					
 					"");
 			System.out.println("  +---+\r\n" + 
 					"  |   |\r\n" + 

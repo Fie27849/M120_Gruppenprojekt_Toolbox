@@ -16,8 +16,8 @@ public class BenzinRechner {
 	
 	private double verbrauchPro100;	// Menge Benzin, für 100km in Liter
 	private double verbrauchKmRestGeplant;	//benötigtes Benzin für kmRestGeplant
-	private double tankungen;			// benötigtes Benzin für geplante Strecke muss auf mehrere Tankfüllungen aufgeteilt werden
-	private int tankungen2;			// aufgerundete Tankungen
+	private int anzNachtanken;			// so oft muss nachgetankt werden
+	private double tanken;				// hilft anzNachtanken
 	
 	Scanner scanner = new Scanner(System.in);	// scanner für Eingaben
 	private int eingabe;			// int für Eingaben
@@ -93,7 +93,7 @@ public class BenzinRechner {
 		
 	}
 
-	// Eingabe von Menu AUSWERTEN
+	// Eingabe von Menu AUSWERTEN, Berechnung aufrufen
 	private void eingabeAuswerten(int eingabe){
 		
 		switch (eingabe) {
@@ -113,11 +113,9 @@ public class BenzinRechner {
 			case5();
 			break;
 
-
 		default:
-			System.out.println("==============================\nDie Eingabe ist"
-					+ " leider ungültig.\nBitte versuche es mit einer Zahl"
-					+ " von 1 bis 5 erneut.\n==============================");
+			System.out.println("==============================\nDie Eingabe ist leider ungültig."
+					+ "\nBitte versuche es mit einer Zahl von 1 bis 5 erneut.\n==============================");
 			Menu();
 			break;
 		}
@@ -134,13 +132,40 @@ public class BenzinRechner {
 			Menu();
 		}else if(eingabe == 12){
 			System.out.println("OK, auf wiedersehen.");
+			System.exit(0);
 		}
 		
 	}
 	
+	private int anzNachtanken(double restLiterBenoetigt, double tankRest){
+		
+		anzNachtanken = 1;
+		while(restLiterBenoetigt > tankGesamt){
+			anzNachtanken ++;
+			//System.out.println(anzNachtanken);
+			restLiterBenoetigt = restLiterBenoetigt - tankGesamt;
+			//System.out.println(tanken);
+		}
+		
+		return anzNachtanken;
+	}
+	
+	private boolean testMaxKm(double tankRest){
+		
+		literVerbraucht = kmGefahren*verbrauchPro100/100; 	// verbraucht seit letztem Tanken
+		tankRest = tankGesamt-literVerbraucht;				// Restliche Liter im Tank
+		
+		if(tankRest >= 0){
+			//System.out.println("return true");
+			return true;
+		}
+		//System.out.println("return false");
+		return false;
+	}
+	
 	// Benutzer wählt OPTION 1: maximale km mit vollem Tank berechnen
 	private void case1(){
-		System.out.println("Du kannst nun berechnen, wie viele km du mit vollem Tank fahrenkannst."
+		System.out.println("Du kannst nun berechnen, wie viele km du mit vollem Tank fahren kannst."
 				+ "\nDazu musst du noch ein paar Angaben machen:");
 		
 		System.out.println("\nWie viele Liter Benzin fasst dein Tank?");
@@ -245,30 +270,43 @@ public class BenzinRechner {
 		verbrauchPro100 = scanner.nextDouble();
 		System.out.println("Wie weit bist du seit dem letzten Mal tanken gefahren?");
 		kmGefahren = scanner.nextDouble();
-		System.out.println("Wie weit möchtest du fahren?");
-		kmGeplant = scanner.nextDouble();
-		
-		
 		
 		literVerbraucht = kmGefahren*verbrauchPro100/100; 	// verbraucht seit letztem Tanken
 		tankRest = tankGesamt-literVerbraucht;				// Restliche Liter im Tank
-		kmRest = tankRest/verbrauchPro100*100;				// Restliche km mit aktuellem Füllstand
-		kmRestGeplant = kmGeplant-kmRest;					// für so viele km muss man nachtanken
-		verbrauchKmRestGeplant = kmRestGeplant*verbrauchPro100/100;	// Liter die man nachtanken muss
 		
-//		System.out.println(literVerbraucht);
-//		System.out.println(tankRest);
-//		System.out.println(kmRest);
-//		System.out.println(kmRestGeplant);
-//		System.out.println(verbrauchKmRestGeplant);
-		
-		System.out.println("Du musst " + verbrauchKmRestGeplant + " Liter nachtanken.");
-		if(verbrauchKmRestGeplant > tankGesamt){
-			tankungen = verbrauchKmRestGeplant/tankGesamt;
-			// tankungen runden
-			System.out.println(tankungen);
-			System.out.println("Das passt aber nicht auf einmal in deinen Tank.\nDu musst " + tankungen2 + " mal tanken.");
+		if(testMaxKm(tankRest)){
+			
+			System.out.println("Wie weit möchtest du fahren?");
+			kmGeplant = scanner.nextDouble();
+							
+			kmRest = tankRest/verbrauchPro100*100;				// Restliche km mit aktuellem Füllstand
+			kmRestGeplant = kmGeplant-kmRest;					// für so viele km muss man nachtanken
+			verbrauchKmRestGeplant = kmRestGeplant*verbrauchPro100/100;	// Liter die man nachtanken muss
+				
+//			System.out.println(literVerbraucht);
+//			System.out.println(tankRest);
+//			System.out.println(kmRest);
+//			System.out.println(kmRestGeplant);
+//			System.out.println(verbrauchKmRestGeplant);
+			
+			System.out.println("Du musst " + verbrauchKmRestGeplant + " Liter nachtanken.");
+			if(verbrauchKmRestGeplant > tankGesamt){
+				anzNachtanken = anzNachtanken(verbrauchKmRestGeplant, tankRest);
+				
+				System.out.println("Das passt aber nicht auf einmal in deinen Tank.\nDu musst " + anzNachtanken + " mal tanken.");
+			}
+			
+		}else{
+			System.out.println("Das kann nicht sein, so weit kannst du mit einem vollen Tank nicht fahren.");
 		}
+		
+		
+		
+			
+		
+		
+		
+		
 		
 
 		fortfahren();
