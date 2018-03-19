@@ -1,5 +1,3 @@
-
-
 public class main 
 {	
 	public static void main(String[] args) {
@@ -15,7 +13,13 @@ public class main
 //		}
 		
 		// Stephanie
-		System.out.println("======================== STEPHANIE ========================");
-		BenzinRechner benzinRechner = new BenzinRechner();
+//		System.out.println("======================== STEPHANIE ========================");
+//		BenzinRechner benzinRechner = new BenzinRechner();
+		
+		// Janosch
+		System.out.println("======================== JANOSCH ========================");
+		Primzahlen primzahlen = new Primzahlen(100);
+		
+		
 	}
 }
