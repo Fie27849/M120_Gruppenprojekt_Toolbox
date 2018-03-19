@@ -6,8 +6,8 @@ public class main
 		
 		
 		
-		// Janosch
-//		System.out.println("======================== JANOSCH ========================");
+		// Denis
+//		System.out.println("======================== DENIS ========================");
 //		try {
 //			Hangman hang = new Hangman();
 //		} catch (Exception e) {
