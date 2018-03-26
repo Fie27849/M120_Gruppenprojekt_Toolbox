@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class TextAnalyse implements Files {
+public class TextAnalyse implements StdFilesLoc {
 	
 	private Path home;
 	private Scanner scan;
@@ -55,5 +55,10 @@ public class TextAnalyse implements Files {
 	
 	public void result() {
 		System.out.println("Dein Buchstabe " + this.letter + " wurde " + this.letterfound + " mal im Text gefunden");
+	}
+	@Override
+	public void check_folder() {
+		// TODO Auto-generated method stub
+		
 	}
 }
