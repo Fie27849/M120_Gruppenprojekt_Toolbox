@@ -50,7 +50,8 @@ public class TextVerschluesseln {
 	                text +=  line;
 	            }
 	        } catch (IOException e) {
-	            e.printStackTrace();
+	            System.out.println("File existiert nicht");
+	            eingabe();
 	        } 
 			
 			System.out.println(this.home);

@@ -8,6 +8,8 @@ public class Taschenrechner {
 	double a;
 	double b;
 	double resultat;
+	int zaehler = 0;
+	String exit = "exit";
 
 	Scanner scan = new Scanner(System.in);
 	
@@ -16,14 +18,26 @@ public class Taschenrechner {
 	}
 
 	private void eingabe() {
-		System.out.println("Bitte geben Sie die erste Zahl ein:");
-		zahleins = scan.next();
-		try{
-			a = Double.parseDouble(zahleins);
+		if(zaehler == 0){
+			System.out.println("Bitte geben Sie die erste Zahl ein:");
+			zahleins = scan.next();
 		}
-		catch(NumberFormatException e){
-			System.out.println("Sie haben keine Zahl eingegeben!");
-			eingabe();
+		else{
+			System.out.println("Bitte geben Sie die erste Zahl ein: (Beenden mit exit)");
+			zahleins = scan.next();
+		}
+		if (zahleins.equals(exit)){
+			System.exit(0);
+		}
+		else{
+			System.out.println(zahleins);
+			try{
+				a = Double.parseDouble(zahleins);
+			}
+			catch(NumberFormatException e){
+				System.out.println("Sie haben keine Zahl eingegeben!");
+				eingabe();
+			}
 		}
 		
 		System.out.println("Bitte geben Sie den gewünschten Operator ein. (+ - * /)");
@@ -38,7 +52,7 @@ public class Taschenrechner {
 			System.out.println("Sie haben keine Zahl eingegeben!");
 			eingabe();
 		}
-		
+		zaehler++;
 		berechnen();
 	}
 	
@@ -51,7 +65,7 @@ public class Taschenrechner {
 			case "*": resultat = a * b;
 			break;
 			case "/": 
-				if(a==0){
+				if(b==0){
 					System.out.println("dividieren durch 0 nicht möglich!");
 					eingabe();
 				}
