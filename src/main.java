@@ -8,12 +8,6 @@ public class main
 		
 		// Denis
 //		System.out.println("======================== DENIS ========================");
-//		try {
-//			Hangman hang = new Hangman();
-//		} catch (Exception e) {
-//			
-//		}
-
 //		Hangman hangman = new Hangman("Test");
 //		hangman.guess('T');
 //		hangman.guess('a');
@@ -25,18 +19,6 @@ public class main
 //		hangman.guess('l');
 //		hangman.guess('o');
 
-//		System.out.println("======================== DENIS ========================");
-//		Hangman hangman = new Hangman("Test");
-//		hangman.guess('T');
-//		hangman.guess('a');
-//		hangman.guess('b');
-//		hangman.guess('z');
-//		hangman.guess('u');
-//		hangman.guess('i');
-//		hangman.guess('k');
-//		hangman.guess('l');
-//		hangman.guess('o');
-		
 //		Hangman hangman2 = new Hangman("Hello");
 //		//hangman2.start();
 //		TextAnalyse text = new TextAnalyse();
