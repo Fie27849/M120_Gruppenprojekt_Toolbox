@@ -15,7 +15,6 @@ public class Hangman
 		this.guessedletters = new ArrayList<>();
 		this.failedguesses = 0;
 		this.foundletters = new String[word.length()];
-		this.scan = new Scanner(System.in);
 		System.out.println("                                                      \n" + 
 				" _   _     _     _   _   ____  __  __     _     _   _ \n" + 
 				"| | | |   / \\   | \\ | | / ___||  \\/  |   / \\   | \\ | |\n" + 
@@ -27,6 +26,7 @@ public class Hangman
 		System.out.println("Write letters to guess the word");
 	}
 	public void start() {
+		this.scan = new Scanner(System.in);
 		
 		boolean check = true;
 		do {
@@ -55,13 +55,13 @@ public class Hangman
 				}
 			}
 			
-			guessedletters.add(letter);
 			
 		} else {
-			guessedletters.add(letter);
-			failedguesses ++;
+			failedguesses++;
 
 		}
+		guessedletters.add(letter);
+
 		print();
 		return true;
 	}
