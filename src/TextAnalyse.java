@@ -25,7 +25,7 @@ public class TextAnalyse implements Files {
 		letter_search();
 		result();
 	}
-	void start() {
+	public void start() {
 		File mytextfile = new File(input.toString(), this.textfile);
 		StringBuilder mystringbuilder = new StringBuilder();
 		try {
@@ -41,19 +41,19 @@ public class TextAnalyse implements Files {
 		this.mytext = mystringbuilder.toString();
 	}
 	
-	void user_input() {
+	public void user_input() {
 		System.out.println("Nach welchem Buchstaben suchen?");
 		this.letter = scan.nextLine().charAt(0);
 		start();
 	}
-	void letter_search() {
+	public void letter_search() {
 		for (int i = 0; i < this.mytext.length(); i++) {
 			if(this.mytext.charAt(i) == this.letter)
 				letterfound++;
 		}
 	}
 	
-	void result() {
+	public void result() {
 		System.out.println("Dein Buchstabe " + this.letter + " wurde " + this.letterfound + " mal im Text gefunden");
 	}
 }

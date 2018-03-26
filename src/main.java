@@ -7,7 +7,7 @@ public class main
 		
 		
 		// Denis
-//		System.out.println("======================== DENIS ========================");
+		System.out.println("======================== DENIS ========================");
 //		Hangman hangman = new Hangman("Test");
 //		hangman.guess('T');
 //		hangman.guess('a');
@@ -22,6 +22,10 @@ public class main
 //		Hangman hangman2 = new Hangman("Hello");
 //		//hangman2.start();
 //		TextAnalyse text = new TextAnalyse();
+		
+		TicTacToe game = new TicTacToe();
+		game.start();
+//		game.debug();
 		
 		// Stephanie
 		//System.out.println("======================== STEPHANIE ========================");
@@ -38,10 +42,10 @@ public class main
 
 //			} catch (Exception e) {			
 //		}
-		try{
-			TextVerschluesseln verschl = new TextVerschluesseln();
-			} catch (Exception e) {			
-		}
+//		try{
+//			TextVerschluesseln verschl = new TextVerschluesseln();
+//			} catch (Exception e) {			
+//		}
 		
 		
 
