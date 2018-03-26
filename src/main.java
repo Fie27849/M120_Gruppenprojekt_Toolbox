@@ -7,7 +7,7 @@ public class main
 		
 		
 		// Denis
-		System.out.println("======================== DENIS ========================");
+//		System.out.println("======================== DENIS ========================");
 //		Hangman hangman = new Hangman("Test");
 //		hangman.guess('T');
 //		hangman.guess('a');
@@ -35,31 +35,22 @@ public class main
 		//hangman2.start();
 //
 //		TextAnalyse text = new TextAnalyse();
+		
+		
 //		// Stephanie
 //		//System.out.println("======================== STEPHANIE ========================");
-//		//BenzinRechner benzinRechner = new BenzinRechner();
+//		BenzinRechner benzinRechner = new BenzinRechner();
 		rechtwDreieck Dreieck = new rechtwDreieck();
-//		
+		//Dreieck.Menu(); // für normalen Programmverlauf
+		Dreieck.testVor(); //zum Testen
 //		
 //		// Sandro
 //		System.out.println("======================== Sandro ========================");
 
-//		Hangman hangman2 = new Hangman("Hello");
-//		//hangman2.start();
-//		TextAnalyse text = new TextAnalyse();
-		
 //		TicTacToe game = new TicTacToe();
 //		game.start();
 //		game.debug();
 		
-		// Stephanie
-		//System.out.println("======================== STEPHANIE ========================");
-		//BenzinRechner benzinRechner = new BenzinRechner();
-		
-		
-		// Sandro
-		System.out.println("======================== Sandro ========================");
-
 //		try {
 //			Quersumme Quersumme = new Quersumme(123);
 //			Quersumme Quersumme2 = new Quersumme(6);
