@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hangman {
-	private String word;
+	//Definition
+	private String word; 
 	private String[] foundletters;
 	private ArrayList<String> guessedletters;
 	private int failedguesses;
@@ -25,6 +26,7 @@ public class Hangman {
 				"");
 		System.out.println("Write letters to guess the word");
 	}
+	//Start Game Funktion
 	public void start() {
 		
 		boolean check = true;
@@ -54,13 +56,12 @@ public class Hangman {
 				}
 			}
 			
-			guessedletters.add(letter);
 			
 		} else {
-			guessedletters.add(letter);
 			failedguesses ++;
 
 		}
+		guessedletters.add(letter);
 		print();
 		return true;
 	}
@@ -178,10 +179,8 @@ public class Hangman {
 					"=========");
 			System.out.println("The word was " + this.word);
 			break;
-		default:
-			
-			break;
 		}
+		
 		StringBuilder foundlettersoutput = new StringBuilder();
 		for (String string : foundletters) {
 			foundlettersoutput.append(" ");

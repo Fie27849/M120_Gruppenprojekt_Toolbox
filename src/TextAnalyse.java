@@ -21,6 +21,7 @@ public class TextAnalyse implements StdFilesLoc {
 		this.letterfound = 0;
 		this.home = Paths.get(HOME);
 		this.scan = new Scanner(System.in);
+		
 		if(!(check_folder()))
 			create_folder();
 		

@@ -76,6 +76,7 @@ public class TicTacToe {
 		}
 	}
 	
+	//Winning condition
 	private void check_win(){
 		String line = "";
 		for (int i = 0; i < 8; i++) {
