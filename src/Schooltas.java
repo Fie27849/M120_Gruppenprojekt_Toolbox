@@ -9,6 +9,7 @@ import javax.imageio.ImageIO;
 
 public class Schooltas 
 {
+	static String bookname = "";
 	final static String m104 = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/062b2e75-40d5-45e0-b07c-cf923dda10bd/";
 	final static String excel = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/f37eef14-c054-4989-9996-4a5297855544/";
 	final static String word = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/7be8d3be-387a-450a-b7e5-43fc02e53207/";
@@ -18,19 +19,73 @@ public class Schooltas
 	final static String m122 = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/68b9b3c6-439f-4e0c-97cb-975d13d743d1/";
 	final static String m306 = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/a4b3af4b-380e-44c7-bc3c-603a8014cc79/";
 	final static String m133 = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/51815130-b759-4e78-aac8-92f3bb959339/";
-	
+
 	public Schooltas()
 	{
-		String link = word;
-		download(link);
+		String link = "";
+		
+		
+			int choice = auswahl();
+			switch(choice)
+			{
+			case 1:
+				link = m104;
+				bookname = "Modul104";
+				break;
+			case 2:
+				link = excel;
+				bookname = "Excel";
+				break;
+			case 3:
+				link = word;
+				bookname = "Word";
+				break;
+			case 4:
+				link = netzwerke;
+				bookname = "Netzwerke";
+				break;
+			case 5:
+				link = m131;
+				bookname = "Modul131";
+				break;
+			case 6:
+				link = m100;
+				bookname = "Modul100";
+				break;
+			case 7:
+				link = m122;
+				bookname = "Modul122";
+				break;
+			case 8:
+				link = m306;
+				bookname = "Modul306";
+				break;
+			case 9:
+				link = m133;
+				bookname = "Modul133";
+				break;
+			default:
+				break;
+			}
+			if(link == "")
+			{
+				System.out.println("Error");
+			}
+			else {
+				download(link);
+			}
+		
+		
+		
 	}
 	
 	public static void download(String buch)
 	{
      	String link = buch;
-     	String bookname = "Word";
+     	
 		boolean site = true;
      	int counter = 1;
+     	System.out.println("-----------------------------------------");
      	while(site){
      		try 
      		{
@@ -53,11 +108,20 @@ public class Schooltas
 	
 	public static void save(BufferedImage image, Integer counter, String bookname) 
 	{
+		//Neuer Ordner erstellen
+		File ordner = new File(bookname);
+		try {
+			ordner.mkdir();
+		} catch (Exception e) {
+			System.out.println("Ordner erstellen fehlgeschlagen");
+		}
+		
+		
 		try {
 		    String name = counter.toString();
 		    BufferedImage bi = image;
-		    File outputfile = new File(bookname + "_" + name +".jpg");
-		    System.out.println(bookname + "_" + name +".jpg | Wurde gespeichert");
+		    File outputfile = new File(bookname+"/"+bookname + "_" + name +".jpg");
+		    System.out.println(bookname + "_" + name +".jpg\t| Wurde heruntergeladen");
 		    ImageIO.write((RenderedImage) bi, "jpg", outputfile);
 		} catch (IOException e) {
 		  System.out.println("Fehler");
@@ -67,7 +131,7 @@ public class Schooltas
 	public static int auswahl()
 	{
 		System.out.println("------------------------------------");
-		System.out.println("Welches buch möchten sie herunterladen?");
+		System.out.println("Welches Buch möchten sie herunterladen?");
 		System.out.println("1. Modul 104");
 		System.out.println("2. Excel");
 		System.out.println("3. Word");
@@ -79,8 +143,9 @@ public class Schooltas
 		System.out.println("9. Modul 133");
 		System.out.println("------------------------------------");
 		System.out.println("Geben sie die gewünschte Zahl an:");
-		Scanner scan = new Scanner(System.in);
-		int choice = scan.nextInt();
+		Scanner scan1 = new Scanner(System.in);
+		int choice = scan1.nextInt();
+		scan1.close();
 		switch(choice)
 		{
 		case 1:
@@ -105,5 +170,6 @@ public class Schooltas
 			return 0;
 		}
 	}
-
+	
+	
 }
