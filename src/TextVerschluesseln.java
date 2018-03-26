@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class TextVerschluesseln {
+public class TextVerschluesseln implements StdFilesLoc{
 	
 	private String filename;
 	private String text = "";
@@ -16,8 +16,6 @@ public class TextVerschluesseln {
 	int zpwd;
 	private char[] charArray = {};
 	private char[] pwdArray = {};
-	private final String HOME = System.getProperty("user.dir");
-	private Path home;
 	
 	Scanner scan = new Scanner(System.in);
 	
@@ -38,8 +36,6 @@ public class TextVerschluesseln {
 		if (auswahl == 1){
 			System.out.println("Bitte speichern Sie das File im input Ordner ab und geben Sie den Filename an. Beispiel: text.txt");
 			filename = scan.next();
-			this.home = Paths.get(HOME);
-			Path input = Paths.get(HOME, "input");
 			File mytext = new File(input.toString(), filename);
 			
 			try {
@@ -54,7 +50,6 @@ public class TextVerschluesseln {
 	            eingabe();
 	        } 
 			
-			System.out.println(this.home);
 			verschluesseln(text);
 		}
 		
@@ -116,6 +111,12 @@ public class TextVerschluesseln {
 		else{
 			System.out.println("decodierter Text: " + ausgabe);
 		}
+		
+	}
+
+	@Override
+	public void check_folder() {
+		// TODO Auto-generated method stub
 		
 	}
 
