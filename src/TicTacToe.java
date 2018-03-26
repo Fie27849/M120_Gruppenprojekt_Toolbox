@@ -7,12 +7,11 @@ public class TicTacToe {
 	private String player2 = "x";
 	private boolean turn; // True = player 1 & false = player 2
 	private Scanner scan;
-	private boolean gameon;
+	private boolean gameon; // True = Game is on & false Game is over
 	
 	public TicTacToe() {
 		this.scan = new Scanner(System.in);
-		initGame();
-		
+		initGame();	
 	}
 	
 	public void initGame() {
@@ -26,16 +25,12 @@ public class TicTacToe {
 		
 	}
 	public void start() {
-	
-		user_input();
-		user_input();
-		user_input();
-		user_input();
-		/*	do {
+		do {
 			user_input();
 		} while (gameon);
-		*/
+		System.out.println("We have a Winner!");
 	}
+	
 	public void user_input() {
 		System.out.println(turn ? "Player 1" : "Player2");
 		System.out.println("Give in Row - (1-3) and Column | (1-3)");
@@ -46,7 +41,7 @@ public class TicTacToe {
 		} else {
 			System.out.println("Ungültiger Spielzug!");
 		}
-		
+		check_win();
 	}
 	
 	private boolean setfield(int row, int column) {
@@ -68,18 +63,7 @@ public class TicTacToe {
 		
 		return false;
 	}
-	public void debug() {
-		debug_field();
-		draw_field();
-	}
-	private void debug_field(){
-		this.field[2][2] = "x";
-		this.field[1][0] = "o";
-		this.field[0][2] = "x";
-		this.field[1][2] = "o";
-		this.field[1][1] = "x";
-
-	}
+	
 	private void draw_field(){
 		for (int i = 0; i < field.length; i++) {
 			for (int j = 0; j < field.length; j++) {
@@ -92,9 +76,8 @@ public class TicTacToe {
 		}
 	}
 	
-	private boolean check_win(){
+	private void check_win(){
 		String line = "";
-		boolean win = false;
 		for (int i = 0; i < 8; i++) {
 			switch (i) {
 			case 0:
@@ -128,11 +111,13 @@ public class TicTacToe {
 			default:
 				break;
 			}
-			win = check_line(line);
-			if(win)
+			if(check_line(line)) {
+				this.gameon = false;
 				break;
+			}
+				
 		}
-		return win;
+		
 	}
 	private boolean check_line(String line) {
 		if (line.equals("xxx")) {
@@ -142,5 +127,18 @@ public class TicTacToe {
 		} else {
 			return false;
 		}
+	}
+	
+	public void debug() {
+		debug_field();
+		draw_field();
+	}
+	private void debug_field(){
+		this.field[2][2] = "x";
+		this.field[1][0] = "o";
+		this.field[0][2] = "x";
+		this.field[1][2] = "o";
+		this.field[1][1] = "x";
+
 	}
 }

@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Hangman 
-{
+public class Hangman {
 	private String word;
 	private String[] foundletters;
 	private ArrayList<String> guessedletters;

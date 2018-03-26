@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
@@ -20,6 +21,8 @@ public class TextAnalyse implements StdFilesLoc {
 		this.letterfound = 0;
 		this.home = Paths.get(HOME);
 		this.scan = new Scanner(System.in);
+		if(!(check_folder()))
+			create_folder();
 		
 		user_input();
 		letter_search();
@@ -56,9 +59,15 @@ public class TextAnalyse implements StdFilesLoc {
 	public void result() {
 		System.out.println("Dein Buchstabe " + this.letter + " wurde " + this.letterfound + " mal im Text gefunden");
 	}
+	
 	@Override
-	public void check_folder() {
-		// TODO Auto-generated method stub
-		
+	public boolean check_folder() {
+		return Files.exists(home);
+	}
+	@Override
+	public boolean create_folder() {
+		File file = new File(input.toString());
+		file.mkdir();
+		return false;
 	}
 }
