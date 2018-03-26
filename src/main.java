@@ -46,13 +46,13 @@ public class main
 //			TextVerschluesseln verschl = new TextVerschluesseln();
 //			} catch (Exception e) {			
 //		}
-		
+
 		
 
 		// Janosch
 //		System.out.println("======================== JANOSCH ========================");
 //		Primzahlen primzahlen = new Primzahlen(100);
-		
+		Zeitsystem zsys = new Zeitsystem();
 
 	}
 }
