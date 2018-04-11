@@ -40,30 +40,24 @@ public class main
 //		// Stephanie
 //		//System.out.println("======================== STEPHANIE ========================");
 //		BenzinRechner benzinRechner = new BenzinRechner();
-		rechtwDreieck Dreieck = new rechtwDreieck();
+//		rechtwDreieck Dreieck = new rechtwDreieck();
 		//Dreieck.Menu(); // für normalen Programmverlauf
-		Dreieck.testVor(); //zum Testen
+//		Dreieck.testVor(); //zum Testen
 //		
 //		// Sandro
-//		System.out.println("======================== Sandro ========================");
+		System.out.println("======================== Sandro ========================");
+		// für testing true mitgeben, ansonsten false!!
+		try {
+			ImperialMetric impmet = new ImperialMetric(true);
+			Taschenrechner tr = new Taschenrechner(true);
+			Quersumme qr = new Quersumme(true);
+			TextVerschluesseln tv = new TextVerschluesseln(true);
+			} catch (Exception e) {			
+		}
 
-//		TicTacToe game = new TicTacToe();
-//		game.start();
-//		game.debug();
-		
-//		try {
-//			Quersumme Quersumme = new Quersumme(123);
-//			Quersumme Quersumme2 = new Quersumme(6);
-//			Quersumme Quersumme3 = new Quersumme(0);
-//			Quersumme Quersumme4 = new Quersumme();
-
-//
-//			} catch (Exception e) {			
-//		}
-//
 //		// Janosch
 //		System.out.println("======================== JANOSCH ========================");
-////		Primzahlen primzahlen = new Primzahlen(100);
+//		Primzahlen primzahlen = new Primzahlen(100);
 		
 
 
