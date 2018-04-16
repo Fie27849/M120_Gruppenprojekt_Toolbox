@@ -34,7 +34,7 @@ public class TextAnalyse implements StdFilesLoc {
 	/**
 	 * Methode um die Text Analyse zu starten.
 	 */
-	private void start() {
+	public void start() {
 		user_input();
 		letter_search();
 		System.out.println(result());
