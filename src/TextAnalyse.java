@@ -40,6 +40,16 @@ public class TextAnalyse implements StdFilesLoc {
 		System.out.println(result());
 	}
 	/**
+	 * Methode um zu testen
+	 */
+	public void test() {
+		this.letter = 'a';
+		this.mytext = "Hello this is a text";
+		letter_search();
+		System.out.println(result());
+		
+	}
+	/**
 	 * Oeffnet das Textfile, liest den Text und speichert es in die Klassenvariable mytext
 	 * Bei einem Fehler wird die Klassenvariable mytext nur ohne Text instanziert und der
 	 * Pfad wird ausgegeben
