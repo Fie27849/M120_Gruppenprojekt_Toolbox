@@ -4,8 +4,7 @@ public class main
 {	
 	public static void main(String[] args) {
 		
-		dreieck ok = new dreieck();
-		ok.test();
+		
 
 	}
 }
