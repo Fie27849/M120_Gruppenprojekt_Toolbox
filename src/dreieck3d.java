@@ -44,9 +44,9 @@ public class dreieck3d
 		ya = 4;
 		yb = 4;
 		yc = 9;
-		za = 5;
-		zb = 9;
-		zc = 4;
+		za = 0;
+		zb = 0;
+		zc = 0;
 		
 		seitenberechnen();
 		gammabestimmen();
@@ -55,10 +55,12 @@ public class dreieck3d
 		if(Math.round(x) == 8)
 		{
 			System.out.println("Fläche Dreieck: Pass");
+			
 		}
 		else
 		{
 			System.out.println("Fläche Dreieck: Not Pass");
+			
 		}
 	}
 }
