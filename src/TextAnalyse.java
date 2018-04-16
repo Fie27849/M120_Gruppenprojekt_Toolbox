@@ -2,11 +2,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class TextAnalyse implements Files {
+public class TextAnalyse implements StdFilesLoc {
 	
 	private Path home;
 	private Scanner scan;
@@ -21,11 +22,14 @@ public class TextAnalyse implements Files {
 		this.home = Paths.get(HOME);
 		this.scan = new Scanner(System.in);
 		
+		if(!(check_folder()))
+			create_folder();
+		
 		user_input();
 		letter_search();
 		result();
 	}
-	void start() {
+	public void start() {
 		File mytextfile = new File(input.toString(), this.textfile);
 		StringBuilder mystringbuilder = new StringBuilder();
 		try {
@@ -41,19 +45,30 @@ public class TextAnalyse implements Files {
 		this.mytext = mystringbuilder.toString();
 	}
 	
-	void user_input() {
+	public void user_input() {
 		System.out.println("Nach welchem Buchstaben suchen?");
 		this.letter = scan.nextLine().charAt(0);
 		start();
 	}
-	void letter_search() {
+	public void letter_search() {
 		for (int i = 0; i < this.mytext.length(); i++) {
 			if(this.mytext.charAt(i) == this.letter)
 				letterfound++;
 		}
 	}
 	
-	void result() {
+	public void result() {
 		System.out.println("Dein Buchstabe " + this.letter + " wurde " + this.letterfound + " mal im Text gefunden");
+	}
+	
+	@Override
+	public boolean check_folder() {
+		return Files.exists(home);
+	}
+	@Override
+	public boolean create_folder() {
+		File file = new File(input.toString());
+		file.mkdir();
+		return false;
 	}
 }

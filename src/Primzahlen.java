@@ -11,7 +11,7 @@ public class Primzahlen
 
 	ArrayList<Integer> nichtprim = new ArrayList<Integer>();
 
-	
+	static int globalstart = 0;
 
 	static int globalende = 0;
 
@@ -23,7 +23,7 @@ public class Primzahlen
 
 		globalende = ende;
 
-		
+		globalstart = 1;
 
 		if(checkUebergabe(1, ende))
 
@@ -187,7 +187,7 @@ public class Primzahlen
 
 	{
 
-		System.out.println("Alle Primzahlen von " + 1 + " bis "+ globalende);
+		System.out.println("Alle Primzahlen von " + globalstart + " bis "+ globalende);
 
 		for (Integer integer : primzahlen) {
 
