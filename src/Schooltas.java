@@ -9,6 +9,10 @@ import javax.imageio.ImageIO;
 
 public class Schooltas 
 {
+	/**
+	 * Alle Links zu den bestimmten Büchern 
+	 * (können beliebig erweitert werden)
+	 */
 	static String bookname = "";
 	final static String m104 = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/062b2e75-40d5-45e0-b07c-cf923dda10bd/";
 	final static String excel = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/f37eef14-c054-4989-9996-4a5297855544/";
@@ -19,7 +23,9 @@ public class Schooltas
 	final static String m122 = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/68b9b3c6-439f-4e0c-97cb-975d13d743d1/";
 	final static String m306 = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/a4b3af4b-380e-44c7-bc3c-603a8014cc79/";
 	final static String m133 = "https://production-applicationstack-x2l8-pdfcontentbucket-8lgvyehv6f1g.s3.eu-central-1.amazonaws.com/tiles/51815130-b759-4e78-aac8-92f3bb959339/";
-
+	/**
+	 * Dieses Probramm lädt die Bücher aus Schooltas in Form von jpg's herunter
+	 */
 	public Schooltas()
 	{
 		String link = "";
@@ -78,7 +84,11 @@ public class Schooltas
 		
 		
 	}
-	
+	/**
+	 * Hier wird der link übergeben und das Buch wird heruntergeladen immer Seite für Seite im Jpg Format
+	 * In der Konsole wird ausgegeben wenn der Download beendet ist und welche Datei gerade heruntergeladen wird
+	 * @param buch
+	 */
 	public static void download(String buch)
 	{
      	String link = buch;
@@ -105,7 +115,13 @@ public class Schooltas
 	    		}
      	}
 	}
-	
+	/**
+	 * In dieser Funktion wird das File in einen Neu erstellten Ordner mit dem Buchnamen gespeichert
+	 * Hier wird der Name des Buches und das Bild übergeben plus die aktuelle Dateinummer
+	 * @param image
+	 * @param counter
+	 * @param bookname
+	 */
 	public static void save(BufferedImage image, Integer counter, String bookname) 
 	{
 		//Neuer Ordner erstellen
@@ -127,7 +143,10 @@ public class Schooltas
 		  System.out.println("Fehler");
 		}
 	}
-	
+	/**
+	 * Das ist ein Übersichtsmenü indem man alle Bücher sieht und anhand der Nummer auswählen kann welches heruntergeladen werden soll.
+	 * @return
+	 */
 	public static int auswahl()
 	{
 		System.out.println("------------------------------------");
