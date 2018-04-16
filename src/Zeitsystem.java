@@ -11,8 +11,11 @@ import java.util.Date;
 import java.util.Scanner;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
-public class Zeitsystem 
+public class Zeitsystem
 {
 	public Zeitsystem() 
 	{
@@ -89,6 +92,7 @@ public class Zeitsystem
 			}
 			System.out.println("=======================================");
 		}
+	
 		
 	}
 	
@@ -163,14 +167,45 @@ public class Zeitsystem
 	}
 	public void ausgabe() 
 	{
+		int arbeitszeit= 0;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+		LocalDateTime tempein = LocalDateTime.now();
+		LocalDateTime tempaus = LocalDateTime.now();
+		int zaehler = 1;
 		String line = null;
 		BufferedReader br;
 		try {
 			br = new BufferedReader(
 					new FileReader("Recourcen_Zeitzaehler/Zeiten.txt"));
-			 while ((line = br.readLine()) != null) {
-				   System.out.println(line);
-				 }
+			 
+				while ((line = br.readLine()) != null) 
+				 {
+					
+					   if(line.equals("ein"))
+					   {
+						   String s =line.substring(19);
+						   tempein = LocalDateTime.parse(s, formatter);
+					   }
+					   else if(line.equals("aus"))
+					   {
+						   String s =line.substring(19);
+						   tempaus = LocalDateTime.parse(s, formatter);
+					   }
+					   if(zaehler % 2 ==0)
+					   {
+						   LocalDateTime tempDateTime = LocalDateTime.from(tempein);
+						   
+						   long hours = tempDateTime.until( tempaus, ChronoUnit.HOURS);
+						   tempDateTime = tempDateTime.plusHours( hours );
+		
+						   long minutes = tempDateTime.until( tempaus, ChronoUnit.MINUTES);
+						   tempDateTime = tempDateTime.plusMinutes( minutes );
+						   
+						   arbeitszeit += (int) (minutes + (hours * 60));
+					   }
+					   zaehler++;
+					 //System.out.println(line);
+				}
 			 br.close();
 		} catch (FileNotFoundException e) {
 			
@@ -179,5 +214,15 @@ public class Zeitsystem
 			
 			e.printStackTrace();
 		}
+		
+		System.out.println(arbeitszeit);
+	}
+	
+	public void Test()
+	{
+		// Die Funktion mit hardcodierten Werten testen
+		// Ausgabe Funktionname Pass oder Funktionname Fail
+		//Vorerst weiter programmieren ohne testen
+		//Gewünscht ist, keine Konsolen ein oder Ausgabe, sondern nur Ausgabe pass oder Fail auf Konsole.
 	}
 }
