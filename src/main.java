@@ -29,7 +29,7 @@ public class main
 		
 		
 		// Sandro
-		System.out.println("======================== Sandro ========================");
+//		System.out.println("======================== Sandro ========================");
 //		try {
 //			Quersumme Quersumme = new Quersumme(123);
 //			Quersumme Quersumme2 = new Quersumme(6);
@@ -46,9 +46,10 @@ public class main
 		
 
 		// Janosch
-//		System.out.println("======================== JANOSCH ========================");
-//		Primzahlen primzahlen = new Primzahlen(100);
-		Zeitsystem zsys = new Zeitsystem();
+		System.out.println("======================== JANOSCH ========================");
+		//Primzahlen primzahlen = new Primzahlen(1000);
+		//Zeitsystem zsys = new Zeitsystem();
+		Schooltas school = new Schooltas();
 
 	}
 }
