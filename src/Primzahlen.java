@@ -6,17 +6,21 @@ import java.util.ArrayList;
 public class Primzahlen 
 
 {
-
+	//Alle zahlen die primzahlen sind
 	ArrayList<Integer> primzahlen = new ArrayList<Integer>();
-
+	//Die restlichen Zahlen
 	ArrayList<Integer> nichtprim = new ArrayList<Integer>();
 
 	static int globalstart = 0;
 
 	static int globalende = 0;
 
-	//Test
-
+	
+/**
+ * Es wird das ende Übergeben, welches den bereich 
+ * definiert aus dem die primzahlen genommen werden sollen.
+ * @param ende
+ */
 	public Primzahlen(int ende)
 
 	{
@@ -68,7 +72,12 @@ public class Primzahlen
 	}
 
 	
-
+/**
+ * Überprüft ob die eingabe korrekt ist
+ * @param x
+ * @param y
+ * @return
+ */
 	public boolean checkUebergabe(int x, int y)
 
 	{
