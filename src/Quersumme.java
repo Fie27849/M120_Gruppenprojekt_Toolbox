@@ -2,14 +2,19 @@ import java.util.Scanner;
 
 public class Quersumme {
 	
+	/**
+	 * Klassenvariablen
+	 */
 	private int zahl;
 	private int resultat = 0;
 	boolean testing = true;
 	int testergebnis = 0;
 	int testmethode = 0;
-	
 	Scanner scan = new Scanner(System.in);
 
+	/**
+	 * Konstruktor mit @param testing Parameter
+	 */
 	public Quersumme(boolean testing) {
 		if(testing){
 			System.out.println("\n#######################");
@@ -25,17 +30,24 @@ public class Quersumme {
 		}
 	}
 	
+	/**
+	 * Konstruktor mit @param zahl als Eingabe
+	 */
 	public Quersumme(int zahl) {
 		this.zahl = zahl;
 		berechnen(zahl);
 	}
-	
+	/**
+	 * Usereingabe
+	 */
 	public void eingabe(){
 		System.out.println("Bitte geben Sie die gewünschte Zahl ein");
 		zahl = scan.nextInt();
 		berechnen(zahl);
 	}
-
+	/**
+	 * Methode zum rechnen mit @param zahl
+	 */
 	public void berechnen(int zahl) {
 		if (zahl <= 9){
 			resultat = zahl;
@@ -55,11 +67,15 @@ public class Quersumme {
 			}
 		}
 	}
-	
+	/**
+	 * Ausgabe mit @param resultat
+	 */
 	public void ausgabe(int resultat){
 		System.out.println("Die Quersumme ist: " + resultat);
 	}	
-	
+	/**
+	 * Testing Methode
+	 */
 	public void test(){
 		if(testmethode == 0){
 			if(resultat == 9){

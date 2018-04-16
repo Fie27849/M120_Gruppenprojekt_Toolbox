@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 public class ImperialMetric {
 	
+	/**
+	 * Klassenvariablen
+	 * 
+	 */
 	double wert;
 	double testMile = 3.2;
 	double testInch = 50.0;
@@ -15,9 +19,12 @@ public class ImperialMetric {
 	double resultat;
 	int zaehler;
 	String exit = "exit";
-	
 	Scanner scan = new Scanner(System.in);
 	
+	/**
+	 * Konstruktor mit @param testing um zu testen
+	 * 
+	 */
 	public ImperialMetric(boolean testing){
 		this.testing = testing;
 		if(testing){
@@ -33,7 +40,11 @@ public class ImperialMetric {
 			auswahl();
 		}
 	}
-
+	
+	/**
+	 * Menuefuehrung
+	 * 
+	 */
 	private void auswahl() {
 
 		System.out.println("#######################");
@@ -61,6 +72,10 @@ public class ImperialMetric {
 		berechnung(menuAuswahl);
 	}
 
+	/**
+	 * Methode um die richtige Methode aufzurufen
+	 * @param menuAuswahl
+	 */
 	private void berechnung(int menuAuswahl) {
 		switch(menuAuswahl){
 		case 1:
@@ -83,6 +98,10 @@ public class ImperialMetric {
 		auswahl();
 	}
 
+	/**
+	 * Methode mileToKm
+	 * @param testing
+	 */
 	private void mileToKm(boolean testing) {
 		if(testing == true){
 			System.out.println("Geben Sie bitte die Anzahl Meilen an: ");
@@ -103,7 +122,10 @@ public class ImperialMetric {
 			test(1);
 		}
 	}
-	
+	/**
+	 * Methode inchtomm
+	 * @param testing
+	 */
 	private void inchTomm(boolean testing) {
 		if(testing == true){
 			System.out.println("Geben Sie bitte die Anzahl inch an: ");
@@ -123,7 +145,10 @@ public class ImperialMetric {
 			test(2);
 		}
 	}
-	
+	/**
+	 * Methode footToMeter
+	 * @param testing
+	 */
 	private void footToMeter(boolean testing) {
 		if(testing == true){
 			System.out.println("Geben Sie bitte die Anzahl foot an: ");
@@ -143,7 +168,10 @@ public class ImperialMetric {
 			test(3);
 		}
 	}
-	
+	/**
+	 * Methode pundToKg
+	 * @param testing
+	 */
 	private void poundToKg(boolean testing) {
 		if(testing == true){
 			System.out.println("Geben Sie bitte die Anzahl Pfund an: ");
@@ -163,7 +191,10 @@ public class ImperialMetric {
 			test(4);
 		}
 	}
-	
+	/**
+	 * Ausgabe & Testing der Klasse
+	 * @param testMethod
+	 */
 	private void test(int testMethod){
 		switch(testMethod){
 		case 1:
