@@ -22,7 +22,7 @@ public class rechtwDreieck {
 	private int eingabe;			// int für Eingaben
 	
 	
-	// ---------------------- Konstruktiren ---------------------------------------------------------------------------------
+	// ---------------------- Konstruktoren ---------------------------------------------------------------------------------
 	
 	public rechtwDreieck(){}
 		
@@ -70,7 +70,7 @@ public class rechtwDreieck {
 	
 	// Menu, welches die Eingaben anfodrert und abspeichert, ruft danach eingabeMoeglich() auf 
 	// um zu prüfen, was mit den Eingaben berechnet werden kann
-	private void Menu(){
+	void Menu(){
 		System.out.println("=============================================================================================");
 		System.out.println("Hallo ich berechne rechtwinklige Dreiecke!");
 		
@@ -360,6 +360,16 @@ public class rechtwDreieck {
 			System.out.println("Es ist schon alles bekannt.\nAuf wiedersehen");
 			System.exit(0);
 		}
+		else if(	eingabeA && !eingabeB && !eingabeC
+				|| 	!eingabeA && eingabeB && !eingabeC
+				|| 	!eingabeA && !eingabeB && eingabeC){
+			System.out.println("FEHLER: Es wurde nur eine Seite angegeben !!!"
+					+ "\nSo kann nichts berechnet werden.");
+		}
+		else if(	!eingabeA && !eingabeB && !eingabeC){
+			System.out.println("FEHLER: Es wurde keine Seite angegeben !!!"
+					+ "\nSo kann nichts berechnet werden.");
+		}
 		
 	}
 	
@@ -409,7 +419,7 @@ public class rechtwDreieck {
 	// Testmethoden
 	public void testVor(){
 		System.out.println("=============================================================================================");
-		System.out.println("Hallo ich bin eiine Testmethode und berechne rechtwinklige Dreiecke!");
+		System.out.println("Hallo ich bin eine Testmethode und berechne rechtwinklige Dreiecke!");
 		
 		a=12;
 		b=20;
