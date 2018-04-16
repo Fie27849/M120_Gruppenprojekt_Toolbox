@@ -8,7 +8,9 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class TextAnalyse implements StdFilesLoc {
-	
+	/**
+	 * Klassenvariablen
+	 */
 	private Path home;
 	private Scanner scan;
 	private char letter;
@@ -16,6 +18,10 @@ public class TextAnalyse implements StdFilesLoc {
 	private String mytext;
 	private String textfile;
 	
+	/**
+	 * Konstruktor verlangt nach dem Namen des @param textfile 
+	 * 
+	 */
 	public TextAnalyse(String textfile){
 		this.textfile = textfile;
 		this.letterfound = 0;
@@ -24,12 +30,21 @@ public class TextAnalyse implements StdFilesLoc {
 		
 		if(!(check_folder()))
 			create_folder();
-		
+	}
+	/**
+	 * Methode um die Text Analyse zu starten.
+	 */
+	private void start() {
 		user_input();
 		letter_search();
-		result();
+		System.out.println(result());
 	}
-	public void start() {
+	/**
+	 * Oeffnet das Textfile, liest den Text und speichert es in die Klassenvariable mytext
+	 * Bei einem Fehler wird die Klassenvariable mytext nur ohne Text instanziert und der
+	 * Pfad wird ausgegeben
+	 */
+	private void find() {
 		File mytextfile = new File(input.toString(), this.textfile);
 		StringBuilder mystringbuilder = new StringBuilder();
 		try {
@@ -40,27 +55,38 @@ public class TextAnalyse implements StdFilesLoc {
             }
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Pfad: " + home.toString());
+            System.out.println("Pfad: " + home.toString() + "\nDatei: " + this.textfile);
+            this.mytext = "";
         } 
 		this.mytext = mystringbuilder.toString();
 	}
-	
-	public void user_input() {
+	/**
+	 * Diese Methode verlangt nach Userinput
+	 */
+	private void user_input() {
 		System.out.println("Nach welchem Buchstaben suchen?");
 		this.letter = scan.nextLine().charAt(0);
-		start();
+		find();
 	}
-	public void letter_search() {
+	/**
+	 * Methode um zu suchen wieviel mal der Buchstabe im Text vorkommt.
+	 */
+	private void letter_search() {
 		for (int i = 0; i < this.mytext.length(); i++) {
 			if(this.mytext.charAt(i) == this.letter)
 				letterfound++;
 		}
 	}
-	
-	public void result() {
-		System.out.println("Dein Buchstabe " + this.letter + " wurde " + this.letterfound + " mal im Text gefunden");
+	/**
+	 * Ausgabe
+	 */
+	private String result() {
+		return "Dein Buchstabe " + this.letter + " wurde " + this.letterfound + " mal im Text gefunden";
 	}
 	
+	/**
+	 * Methoden welche vom Interface StdFilesLoc uebernommen werden.
+	 */
 	@Override
 	public boolean check_folder() {
 		return Files.exists(home);
