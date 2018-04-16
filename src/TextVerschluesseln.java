@@ -8,6 +8,9 @@ import java.util.Scanner;
 
 public class TextVerschluesseln implements StdFilesLoc{
 	
+	/**
+	 * Klassenvariablen
+	 */
 	private String filename;
 	private String text = "";
 	private String verschluesselterText = "";
@@ -20,9 +23,11 @@ public class TextVerschluesseln implements StdFilesLoc{
 	boolean testing = true;
 	int testMethod = 0;
 	int testergebnis = 0;
-	
 	Scanner scan = new Scanner(System.in);
 	
+	/**
+	 * Konstruktor mit @param testing Parameter
+	 */
 	public TextVerschluesseln(boolean testing){
 		this.testing = testing;
 		if(testing){
@@ -44,12 +49,16 @@ public class TextVerschluesseln implements StdFilesLoc{
 			eingabe();
 		}
 	}
-	
+	/**
+	 * Konstruktor mit @param text Parameter
+	 */
 	public TextVerschluesseln(String text){
 		this.text = text;
 		verschluesseln(text);
 	}
-	
+	/**
+	 * Menuefuehrung mit Usereingabe und File lesen
+	 */
 	public void eingabe(){
 		if(testing == false){
 			System.out.println("Möchten Sie eine Eingabe über ein Text file oder per Tastatur Eingabe? 1 für File, 2 für Tastatur");
@@ -91,7 +100,9 @@ public class TextVerschluesseln implements StdFilesLoc{
 		}
 		
 	}
-	
+	/**
+	 * Methode verschluesseln mit @param Text
+	 */
 	public void verschluesseln(String Text){
 		if(testing == false){
 			System.out.println("Bitte geben Sie das Passwort für die Verschlüsselung ein");
@@ -116,7 +127,9 @@ public class TextVerschluesseln implements StdFilesLoc{
 		ausgabe(verschluesselterText, 1);
 		decoder(charArray);
 	}
-	
+	/**
+	 * Methode decoder mit @param charArray
+	 */
 	private void decoder(char[] charArray){
 		zpwd = 0;
 		for(int i = 0; i < charArray.length; i++){
@@ -132,7 +145,11 @@ public class TextVerschluesseln implements StdFilesLoc{
 		}
 		ausgabe(decodierterText, 2);
 	}
-
+	/**
+	 * Methode ausgabe mit:
+	 * @param ausgabe
+	 * @param check
+	 */
 	private void ausgabe(String ausgabe, int check) {
 		if(check == 1){
 			System.out.println("Verschlüsselter Text: " + ausgabe);
@@ -144,7 +161,9 @@ public class TextVerschluesseln implements StdFilesLoc{
 			}
 		}	
 	}
-	
+	/**
+	 * Methode test
+	 */
 	private void test(){
 		if(testMethod == 0){
 			if(decodierterText.equals(text)){
@@ -171,6 +190,9 @@ public class TextVerschluesseln implements StdFilesLoc{
 	}
 
 
+	/**
+	 * Methoden welche vom Interface StdFilesLoc uebernommen werden.
+	 */
 	@Override
 	public boolean check_folder() {
 		// TODO Auto-generated method stub

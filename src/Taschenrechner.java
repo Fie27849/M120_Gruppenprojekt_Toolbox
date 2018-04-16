@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class Taschenrechner {
 	
+	/**
+	 * Klassenvariablen
+	 */
 	String zahleins;
 	String zahlzwei;
 	String operator;
@@ -16,9 +19,11 @@ public class Taschenrechner {
 	int testergebnis = 0;
 	int zaehler = 0;
 	String exit = "exit";
-
 	Scanner scan = new Scanner(System.in);
 	
+	/**
+	 * Konstruktor mit @param testing Parameter
+	 */
 	public Taschenrechner(boolean testing){
 		this.testing = testing;
 		if(testing){
@@ -39,7 +44,9 @@ public class Taschenrechner {
 			eingabe();
 		}
 	}
-
+	/**
+	 * Usereingabe
+	 */
 	private void eingabe() {
 		if(zaehler == 0){
 			System.out.println("Bitte geben Sie die erste Zahl ein:");
@@ -78,7 +85,9 @@ public class Taschenrechner {
 		zaehler++;
 		berechnen();
 	}
-	
+	/**
+	 * Methode berechnen mit Ausgabe
+	 */
 	private void berechnen(){
 		switch(operator){
 			case "+": 
@@ -125,7 +134,10 @@ public class Taschenrechner {
 			eingabe();
 		}
 	}
-	
+	/**
+	 * Methode zum testen der Klasse
+	 * @param testMethod
+	 */
 	private void test(int testMethod){
 		switch(testMethod){
 		case 1:
