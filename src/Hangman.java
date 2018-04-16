@@ -77,7 +77,6 @@ public class Hangman {
 	
 		letter = letter.toLowerCase();
 		if(word.contains(letter)){
-			int index = 0;
 			for (int i = 0; i < foundletters.length; i++) {
 				if(word.charAt(i) == letter.charAt(0)) {
 					foundletters[i] = letter;
