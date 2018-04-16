@@ -14,6 +14,7 @@ public interface StdFilesLoc {
 	 * input = Der Pfad zum Ordner "input"
 	 * */
 	final String HOME = System.getProperty("user.dir");
+	final Path home = Paths.get(HOME);
 	final Path input = Paths.get(HOME, "input");
 	
 	

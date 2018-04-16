@@ -11,7 +11,6 @@ public class TextAnalyse implements StdFilesLoc {
 	/**
 	 * Klassenvariablen
 	 */
-	private Path home;
 	private Scanner scan;
 	private char letter;
 	private int letterfound;
@@ -25,7 +24,6 @@ public class TextAnalyse implements StdFilesLoc {
 	public TextAnalyse(String textfile){
 		this.textfile = textfile;
 		this.letterfound = 0;
-		this.home = Paths.get(HOME);
 		this.scan = new Scanner(System.in);
 		
 		if(!(check_folder()))
@@ -65,7 +63,6 @@ public class TextAnalyse implements StdFilesLoc {
             }
 		    br.close();
         } catch (IOException e) {
-            e.printStackTrace();
             System.out.println("Pfad: " + home.toString() + "\nDatei: " + this.textfile);
             this.mytext = "";
         } 
