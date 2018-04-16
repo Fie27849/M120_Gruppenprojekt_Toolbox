@@ -1,12 +1,12 @@
 
-public class dreieck 
+public class dreieck2d 
 {
 	//berechnung der Fläche eines Dreiecks
 	
 	Double a,b,c,gamma,flaeche;
 	int xa,ya,xb,yb,xc,yc;
 	
-	public dreieck()
+	public dreieck2d()
 	{
 		
 	}
@@ -23,9 +23,9 @@ public class dreieck
 	
 	public void seitenberechnen()
 	{
-		a = Math.sqrt(Math.pow((Math.abs(xb -xc)), 2) + Math.pow((Math.abs(yc - yb)), 2));
-		b = Math.sqrt(Math.pow((Math.abs(xa -xc)), 2) + Math.pow((Math.abs(yc - ya)), 2));
-		c = Math.sqrt(Math.pow((Math.abs(xb -xa)), 2) + Math.pow((Math.abs(ya - yb)), 2));
+		a = Math.sqrt(Math.pow((xb -xc), 2) + Math.pow((yc - yb), 2));
+		b = Math.sqrt(Math.pow((xa -xc), 2) + Math.pow((yc - ya), 2));
+		c = Math.sqrt(Math.pow((xb -xa), 2) + Math.pow((ya - yb), 2));
 	}
 	
 	public double flaechebestimmen()
