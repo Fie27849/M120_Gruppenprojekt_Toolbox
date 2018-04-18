@@ -2,7 +2,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Hangman {
-	//Definition
+
+	/**
+	 * Klassenvariablen
+	 */
 	private String word; 
 	private String[] foundletters;
 	private ArrayList<String> guessedletters;
@@ -10,6 +13,10 @@ public class Hangman {
 	private final int MAXFAILEDGUESS = 7;
 	private Scanner scan;
 	
+	/**
+	 * Konstruktor der Klasse Hangman, das Wort welches zu erraten ist 
+	 * wird als @param word mitgegeben, 
+	 */
 	public Hangman(String word) {
 		this.word = word.toLowerCase();
 		this.guessedletters = new ArrayList<>();
@@ -23,20 +30,41 @@ public class Hangman {
 				"|  _  | / ___ \\ | |\\  || |_| || |  | | / ___ \\ | |\\  |\n" + 
 				"|_| |_|/_/   \\_\\|_| \\_| \\____||_|  |_|/_/   \\_\\|_| \\_|\n" + 
 				"                                                      \n" + 
-				"");
-		System.out.println("Write letters to guess the word");
-	}
-	//Start Game Funktion
-	public void start() {
-		
-		boolean check = true;
-		do {
-			check = this.guess(scan.next().charAt(0));
-		} while (check);
-
+				""
+				+ "\nWrite letters to guess the word");
 	}
 	
-	public boolean guess(char letterfromguess){
+	/**
+	 * Diese Methode startet das Spiel
+	 */
+	public void start() {
+		
+		while(this.guess(scan.next().charAt(0)));
+
+	}
+	/**
+	 * Methode um zu testen
+	 * 
+	 */
+	public void testing() {
+		guess('p');
+		guess('a');
+		guess('l');
+		guess('z');
+		guess('j');
+		guess('y');
+		guess('c');
+		guess('b');
+	}
+	
+	/**
+	 * Methode prueft ob gespielt werden kann mit den Methoden
+	 * check & check_word & schaut ob es den Buchstaben im zu erratenen Wort drin hat
+	 * 
+	 * Parameter : @param letterfromguess ist ein Char, weil man nur 1nen Buchstaben erraten kann
+	 * @return False wenn man nicht mehr spielen kann
+	 */
+	private boolean guess(char letterfromguess){
 		if(check()){
 			System.out.println("You cannot play anymore!");
 			return false;
@@ -49,7 +77,6 @@ public class Hangman {
 	
 		letter = letter.toLowerCase();
 		if(word.contains(letter)){
-			int index = 0;
 			for (int i = 0; i < foundletters.length; i++) {
 				if(word.charAt(i) == letter.charAt(0)) {
 					foundletters[i] = letter;
@@ -65,8 +92,11 @@ public class Hangman {
 		print();
 		return true;
 	}
-	
-	public boolean check() {
+	/**
+	 * Prueft ob failedguesses gleichviel wie MAXFAILEDGUESS ist und
+	 * gibt @return true oder false zurueck
+	 */
+	private boolean check() {
 		if(failedguesses == MAXFAILEDGUESS) {
 			return true;
 		} else {
@@ -74,7 +104,11 @@ public class Hangman {
 		}
 		
 	}
-	public boolean check_word(){
+	/**
+	 * Diese Methode schaut ob man alle Buchstaben gefunden hat
+	 * und gibt @return true aus wenn alle gefunden sind.
+	 */
+	private boolean check_word(){
 		boolean check = true;
 		for (int i = 0; i < foundletters.length; i++) {
 			if(foundletters[i] == null){
@@ -84,7 +118,10 @@ public class Hangman {
 		}
 		return check;
 	}
-	public void print() {
+	/**
+	 * Ausgabe via Konsole
+	 */
+	private void print() {
 		System.out.println("\n\n\n\n\n\n");
 		switch (failedguesses) {
 		case 0:
