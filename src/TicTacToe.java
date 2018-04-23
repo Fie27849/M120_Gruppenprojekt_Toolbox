@@ -44,7 +44,7 @@ public class TicTacToe {
 		do {
 			user_input();
 		} while (gameon);
-		System.out.println("We have a Winner!");
+		System.out.println("The game is done");
 	}
 	/**
 	 * Methode fragt nach User Input (Entweder Player 1 oder Player 2).
@@ -63,13 +63,16 @@ public class TicTacToe {
 		} else {
 			System.out.println("Ungültiger Spielzug!");
 		}
+		if(full_field()) {
+			this.gameon = false;
+		}
 	}
 	/**
 	 * Setzt den "Stein", x oder o, auf das leere Feld.
 	 * Falls das Feld schon besetzt ist oder eine ungültige Eingabe folgt
 	 * gibt die Methode ein false
 	 * */
-	private boolean setfield(int row, int column) {
+	private boolean setfield(int column, int row) {
 		if(row > 3 || column > 3)
 			return false;
 		--row;
@@ -146,6 +149,7 @@ public class TicTacToe {
 				break;
 			}
 			if(check_line(line)) {
+				System.out.println("We have a Winner");
 				this.gameon = false;
 				break;
 			}
@@ -165,6 +169,22 @@ public class TicTacToe {
 		} else {
 			return false;
 		}
+	}
+	
+	/**
+	 * Prüft ob das Spielfeld voll ist
+	 * @return
+	 */
+	private boolean full_field() {
+		boolean gameover = true;
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0; j < 3; j++) {
+				if(this.field[i][j].equals(" ")) {
+					gameover = false;
+				}
+			}
+		}
+		return gameover;
 	}
 	
 	/**
