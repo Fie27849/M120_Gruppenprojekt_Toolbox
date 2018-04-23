@@ -63,7 +63,7 @@ public class TextAnalyse implements StdFilesLoc {
             }
 		    br.close();
         } catch (IOException e) {
-            System.out.println("Pfad: " + home.toString() + "\nDatei: " + this.textfile);
+            System.out.println("Pfad: " + input.toString() + "\nDatei: " + this.textfile);
             this.mytext = "";
         } 
 		this.mytext = mystringbuilder.toString();
