@@ -44,7 +44,7 @@ public class TicTacToe {
 		do {
 			user_input();
 		} while (gameon);
-		System.out.println("The game is done");
+		System.out.println("The game is over");
 	}
 	/**
 	 * Methode fragt nach User Input (Entweder Player 1 oder Player 2).
@@ -53,7 +53,7 @@ public class TicTacToe {
 	 * setzen.
 	 * */
 	private void user_input() {
-		System.out.println(turn ? "Player 1" : "Player2");
+		System.out.println(turn ? "Player 1" : "Player 2");
 		System.out.println("Give in Row - (1-3) and Column | (1-3)");
 		int row = this.scan.nextInt();
 		int column = this.scan.nextInt();
